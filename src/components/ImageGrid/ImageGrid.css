@@ -31,6 +31,18 @@
   filter: saturate(100%);
 }
 
+@media only screen and (max-width: 1500px) {
+  .grid-wrapper {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+}
+
+@media only screen and (max-width: 980px) {
+  .grid-wrapper {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
 @media only screen and (max-width: 768px) {
   .grid-wrapper {
     display: grid;

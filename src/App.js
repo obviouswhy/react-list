@@ -11,9 +11,8 @@ const App = () =>  {
   const getImage = () => {
     fetch(`https://api.unsplash.com//photos/random?count=10&client_id=${process.env.REACT_APP_UNSPLASH_ACCESS_KEY}`)
       .then((res) => res.json())
-      .then((data) => setImages([...images, ...data]))
+      .then((data) => setImages([...data, ...images]))
   }
-
 
   return (
     <div className="App">
