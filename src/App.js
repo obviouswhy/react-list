@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import './App.css'
 import ImageGrid from './components/ImageGrid';
 import LandingPage from './components/LandingPage'
@@ -8,16 +8,20 @@ const App = () =>  {
 
   const [images, setImages] = useState([])
 
-  const getImage = () => {
-    fetch(`https://api.unsplash.com//photos/random?count=10&client_id=${process.env.REACT_APP_UNSPLASH_ACCESS_KEY}`)
+  const getImages = () => {
+    fetch(`https://api.unsplash.com//photos/random?count=5&client_id=${process.env.REACT_APP_UNSPLASH_ACCESS_KEY}`)
       .then((res) => res.json())
       .then((data) => setImages([...data, ...images]))
   }
 
+  useEffect(() => {
+    getImages()
+  }, [])
+
   return (
     <div className="App">
       <NavBar />
-      <LandingPage {...{images}} onBtnClick = {() => getImage()} />
+      <LandingPage onBtnClick = {() => getImages()} />
       <ImageGrid {...{images}} />
     </div>
   );
