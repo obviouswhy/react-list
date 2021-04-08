@@ -1,2 +1,11 @@
 .landing-wrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.landing-wrapper button {
+  padding: 1rem 2.5rem;
+  margin: 5rem;
 }
