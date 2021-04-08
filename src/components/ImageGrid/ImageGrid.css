@@ -20,11 +20,13 @@
   background-size: cover;
   background-repeat: no-repeat;
   cursor: pointer;
-  filter: saturate(20%);
+  opacity: 0.8;
+  filter: saturate(30%);
   transition: all 0.5s;
 }
 
 .grid-image:hover {
+  opacity: 1;
   transform: scale(1.01);
   filter: saturate(100%);
 }
